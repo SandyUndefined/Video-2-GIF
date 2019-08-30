@@ -1,2 +1,4 @@
-# video-2-gifs_converter
-this is my video to gifs converter
+# video-to-Gif-converter
+  This is my first pyhton project. i just started learning python with make small software.
+   
+
