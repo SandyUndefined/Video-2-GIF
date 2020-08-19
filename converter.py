@@ -1,24 +1,30 @@
-import imageio
-import os
-
-clip = os.path.abspath('video.mp4')
+from moviepy.editor import *
 
 
-def gif_converter(inputPath, targetFormat):
-    outputPath = os.path.splitext(inputPath)[0] + targetFormat
+logo = r'''
+          V҉i҉d҉e҉o҉2҉G҉I҉F҉
+	  https://github.com/SandyUndefined/Video-2-GIF
+'''
 
-    print(f'converting {inputPath} \n to {outputPath}')
-
-    reader = imageio.get_reader(inputPath)
-    fps = reader.get_meta_data()['fps']
-
-    writer = imageio.get_writer(outputPath, fps=fps)
-
-    for frames in reader:
-        writer.append_data(frames)
-        print(f'Frame{frames}')
-    print("It's done")
-    writer.close()
+features = r'''
+       FEATURES
+        1.Simple Gif
+'''
 
 
-gif_converter(clip, '.gif')
+def simplegif():
+    path = input("Enter file path: ")
+    video = VideoFileClip(path)
+    video.write_gif("output.gif")
+
+
+if __name__ == '__main__':
+    print(logo)
+    print(features)
+    n = int(input("Select the feature: "))
+    if n == 1:
+        simplegif()
+    else:
+        print("Please select")
+
+
